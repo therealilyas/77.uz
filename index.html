@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/images/favicon.svg" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/assets/styles/main.css" />
+    <title>Vite App</title>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <header
+      class="bg-white shadow-sm py-5 px-6 flex items-center justify-between group relative"
+    >
+      <div class="flex items-center z-0">
+        <div class="ml-4 flex items-center space-x-4">
+          <img src="/logo/Language.svg" alt="lang" />
+          <span class="text-black font-semibold flex justify-between"
+            >Русский</span
+          >
+          <span class="text-black font-semibold">+998 88 500 50 00</span>
+        </div>
+      </div>
+      <img
+        src="/logo/logo.svg"
+        alt="77.uz Logo"
+        class="w-170 h-100 absolute top-0 left-1/2 -translate-x-1/2"
+      />
+      <div class="flex items-center space-x-6">
+        <button class="text-black font-semibold">Избранные</button>
+        <button class="text-black font-semibold">Войти</button>
+      </div>
+    </header>
+
+    <div
+      class="flex py-4 flex-col items-center justify-center w-full pt-50 px-[30px]"
+    >
+      <div
+        class="flex bg-white items-center w-[580px] h-[60px] px-1 rounded-[8px] mt-20"
+      >
+        <i class="icon-search text-base text-[#8E9297] px-2"></i>
+        <input
+          type="text"
+          placeholder="Что вы ищите?"
+          class="w-[473px] h-[58px] focus:outline-none border-gray-300 py-2 rounded-l"
+        />
+
+        <button
+          class="bg-black-100 w-[107px] h-[44px] font-semibold text-white px-6 py-2 rounded-[8px]"
+        >
+          Поиск
+        </button>
+      </div>
+      <div
+        class="flex flex-col items-center justify-center w-full pt-50 bg-white mt-[29px] pt-[20px]"
+      >
+        <h2 class="font-bold text-4xl">Категории</h2>
+        <p class="text-[#8E9297] text-x1s mt-[10px]">
+          Вы можете найти все категории, которые вам нужны от покупателя
+        </p>
+        <div id="categoriesGrid" class="grid grid-cols-3 grid-rows-7 pt-[20px]">
+          <script>
+            const categories = [
+              {
+                title: "Для женщин",
+                icon: "icon-girl",
+                listings: "4 147 объявлений",
+              },
+              {
+                title: "Для мужчин",
+                icon: "icon-boy",
+                listings: "547 объявлений",
+              },
+              {
+                title: "Детские товары",
+                icon: "icon-carriage",
+                listings: "635 объявлений",
+              },
+              {
+                title: "Обувь",
+                icon: "icon-sneakers",
+                listings: "684 объявлений",
+              },
+              {
+                title: "Автотовары",
+                icon: "icon-spanner",
+                listings: "63 объявлений",
+              },
+              {
+                title: "Дача, сады и огороды",
+                icon: "icon-sapling",
+                listings: "847 объявлений",
+              },
+              {
+                title: "Бытовая техника",
+                icon: "icon-fridge",
+                listings: "547 объявлений",
+              },
+
+              {
+                title: "Красота",
+                icon: "icon-beauty",
+                listings: "574 объявлений",
+              },
+              {
+                title: "Здоровье",
+                icon: "icon-heart-puls",
+                listings: "684 объявлений",
+              },
+              {
+                title: "Украшения и бижутерия",
+                icon: "icon-jewelry",
+                listings: "4 147 объявлений",
+              },
+              {
+                title: "Канцелярия",
+                icon: "icon-pencil",
+                listings: "101 объявлений",
+              },
+              {
+                title: "Новые легковые автомобили",
+                icon: "icon-car",
+                listings: "847 объявлений",
+              },
+              {
+                title: "Личная гигиена",
+                icon: "icon-cleaning",
+                listings: "741 объявлений",
+              },
+              {
+                title: "Электроника",
+                icon: "icon-pc-phone",
+                listings: "4 147 объявлений",
+              },
+              {
+                title: "Домашняя утварь",
+                icon: "icon-blender",
+                listings: "4 147 объявлений",
+              },
+              {
+                title: "Спорт и отдых",
+                icon: "icon-umbrella",
+                listings: "741 объявлений",
+              },
+              {
+                title: "Мототранспорт",
+                icon: "icon-motocycle",
+                listings: "4 147 объявлений",
+              },
+              {
+                title: "Аксессуары",
+                icon: "icon-backpack",
+                listings: "574 объявлений",
+              },
+            ];
+
+            const categoriesGrid = document.getElementById("categoriesGrid");
+
+            categories.forEach((category) => {
+              const card = document.createElement("div");
+
+              card.innerHTML = `
+<div
+            class="flex items-center justify-between p-4 w-[368px] h-[85px] relative bg-white rounded-2xl border border-gray-100 space-x-4 mr-10 mb-5"
+          >
+            <div class="p-2 w-[64px] h-[64px] bg-white absolute left-[-20px] flex items-center justify-center border rounded-xl border-red-500 "
+            style="box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08); border-color: #EAEDF0;">
+              <i class=" ${category.icon} text-blue-100 text-2xl"></i>
+            </div>
+
+            <div class="absolute left-[50px]">
+              <h3 class="text-lg font-medium text-gray-900">${category.title}</h3>
+              <p class="text-sm text-gray-500">${category.listings}</p>
+            </div>
+
+            <div class="ml-auto text-gray-400 absolute right-[12px] rotate-[-90deg]">
+              <i class="icon-chevron"></i>
+            </div>
+          </div>
+              `;
+
+              categoriesGrid.appendChild(card);
+            });
+          </script>
+        </div>
+      </div>
+
+      <div
+        class="flex py-4 flex-col items-center justify-center w-full pt-50 mt-[10px] px-[30px]"
+      >
+        <h2 class="font-bold text-4xl">Объявления</h2>
+        <p class="text-[#8E9297] text-x1s mt-[10px]">
+          Вы можете найти все категории, которые вам нужны от покупателя
+        </p>
+
+        <div
+          id="product-grid"
+          class="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 "
+        ></div>
+
+        <script>
+          // Define an array of product objects
+          const products = [
+            {
+              name: "Kenem Cornelian Diamond for Him edition",
+              price: "2 599 000",
+              image: "cap_1.png",
+              time: "Вчера, 19:20",
+              location: "г. Ташкент",
+              phone: "+998 71 200 70 07",
+            },
+            {
+              name: "Chevrolet Onix 1.2 Turbo в наличии",
+              price: "204 000 000",
+              image: "car_1.png",
+              time: "Вчера, 19:20",
+              location: "г. Самарканд",
+              phone: "+998 71 200 70 07",
+            },
+            {
+              name: "7Saber Trucker Cap",
+              price: "280 000",
+              image: "cap_2.png",
+              time: "Вчера, 19:20",
+              location: "г. Ташкент",
+              phone: "+998 71 200 70 07",
+            },
+            {
+              name: "Оригинальные кроссовки Nike Air Max Plus",
+              price: "4 820 000",
+              image: "sneakers_1.png",
+              time: "Вчера, 19:20",
+              location: "г. Ташкент",
+              phone: "+998 71 200 70 07",
+            },
+            {
+              name: "Оригинальные кроссовки Nike Air Max 97",
+              price: "4 820 000",
+              image: "sneakers_2.png",
+              time: "Вчера, 19:20",
+              location: "г. Ташкент",
+              phone: "+998 71 200 70 07",
+            },
+            {
+              name: "Оригинальные кроссовки Nike Air Max 97",
+              price: "4 820 000",
+              image: "watches.png",
+              time: "Вчера, 19:20",
+              location: "г. Ташкент",
+              phone: "+998 71 200 70 07",
+            },
+            {
+              name: "Лучший кроссовер Geely Monjaro Limited Edition",
+              price: "320 000 000",
+              image: "car_2.png",
+              time: "Вчера, 19:20",
+              location: "г. Ташкент",
+              phone: "+998 71 200 70 07",
+            },
+            {
+              name: "Стайлер для волос Dyson airwrap complete long",
+              price: "500 000",
+              image: "dyson.png",
+              time: "Вчера, 19:20",
+              location: "г. Ташкент",
+              phone: "+998 71 200 70 07",
+            },
+          ];
+
+          function createProductCard(product) {
+            return `
+            
+                 <div class="w-64 bg-white rounded-lg shadow-md mt-10">
+    
+      <div class="relative">
+    
+         
+        <img src="/products/${product.image}" class="bg-[url('/products/${product.image}')] w-[278px] h-[240px] rounded-t-[12px] object-cover" alt="${product.name}">
+
+              <i class="icon-heart text-4xl		 text-white absolute top-2 left-2 pt-[8px] pl-[8px] w-[120px] "></i>
+     
+      </div>
+
+  <div class="p-4">
+    
+      <div class="mt-3">
+        <span class="inline-block bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded">
+            ${product.location}
+        </span>
+    </div>
+
+    <h3 class="mt-2 text-blue-600 font-semibold">
+      ${product.name}
+    </h3>
+
+    <p class="text-gray-500 text-xs mt-1">${product.time}</p>
+
+    <p class="text-gray-200 font-medium text-sm mt-1">${product.phone}</p>
+
+    <div class="mt-3"><span class="text-2xl font-bold text-gray-900">${product.price}</span>
+
+        <span class="text-blue-600 text-sm">UZS</span>
+    </div>
+  
+  </div>
+  </div>
+            `;
+          }
+          const productGrid = document.getElementById("product-grid");
+
+          products.forEach((product) => {
+            productGrid.innerHTML += createProductCard(product);
+          });
+        </script>
+
+        <button
+          class="bg-gray-100 mt-[40px] font-bold text-black-100 py-2 px-4 rounded-full border border-[rgba(214, 214, 214, 0.50);] hover:bg-gray-200 hover:text-white"
+        >
+          Загрузить больше
+        </button>
+      </div>
+    </div>
+
+    <footer class="bg-white mt-8 py-8 ">
+      <div class="container mx-auto text-center">
+       <a href="#"><img src="/public/logo/Logo_footer.png" alt="Logo" class=" mx-auto mt-[-90px] "></a> 
+        <p class="text-black-500 mb-4 max-w-[670px] mx-auto"> <span>77.uz</span> marketplace - это виртуальная платформа в Узбекистане,
+          которая облегчает покупки и продажи, связывая продавцов с потенциальными клиентами. </p>
+        <div class="flex justify-center space-x-4 mb-4">
+          <ul class="flex w-[800px] justify-between">
+            <li class="flex">
+              <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
+              <a href="#" class=" text-[#16191D] text-center font-[Inter] text-[20px] font-semibold leading-[130%]">Доска
+                объявлений</a>
+            </li>
+            <li class="flex">
+              <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
+              <a href="#"
+                class=" text-[#16191D] text-center font-[Inter] text-[20px] font-semibold leading-[130%]">Условия
+                пользования</a>
+            </li>
+            <li class="flex">
+              <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
+              <a href="#" class=" text-[#16191D] text-center font-[Inter] text-[20px] font-semibold leading-[130%]">+998
+                88 500 50 00</a>
+            </li>
+          </ul>
+        </div>
+  
+      </div>
+      <div class="border-t  border-gray-200 mb-2 px-12">
+        <div class="flex justify-between items-end h-10 w-[1440px] mx-auto mb-[-32px]">
+          <p class="text-gray-500"> <span class="font-bold">©77.uz </span> 2023. Все права защищены </p>
+          <p class="text-gray-500 mt-4"><a href="#"><img src="/public/logo/uic-logo.svg" alt=""></a></p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
