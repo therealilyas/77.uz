@@ -14,10 +14,12 @@
     >
       <div class="flex items-center z-0">
         <div class="ml-4 flex items-center space-x-4">
-          <img src="/logo/Language.svg" alt="lang" />
+          <img src="/logo/Language.svg" alt="lang" /><span>Русский</span></option>
+           
           <span class="text-black font-semibold flex justify-between"
             >Русский</span
           >
+        
           
           <span class="text-black font-semibold">+998 88 500 50 00</span>
         </div>
@@ -59,130 +61,20 @@
         <p class="text-[#8E9297] text-x1s mt-[10px]">
           Вы можете найти все категории, которые вам нужны от покупателя
         </p>
-        <div id="categoriesGrid" class="grid grid-cols-3 grid-rows-7 pt-[20px] group">
-          <script>
-            const categories = [
-              {
-                title: "Для женщин",
-                icon: "icon-girl",
-                listings: "4 147 объявлений",
-              },
-              {
-                title: "Для мужчин",
-                icon: "icon-boy",
-                listings: "547 объявлений",
-              },
-              {
-                title: "Детские товары",
-                icon: "icon-carriage",
-                listings: "635 объявлений",
-              },
-              {
-                title: "Обувь",
-                icon: "icon-sneakers",
-                listings: "684 объявлений",
-              },
-              {
-                title: "Автотовары",
-                icon: "icon-spanner",
-                listings: "63 объявлений",
-              },
-              {
-                title: "Дача, сады и огороды",
-                icon: "icon-sapling",
-                listings: "847 объявлений",
-              },
-              {
-                title: "Бытовая техника",
-                icon: "icon-fridge",
-                listings: "547 объявлений",
-              },
-
-              {
-                title: "Красота",
-                icon: "icon-beauty",
-                listings: "574 объявлений",
-              },
-              {
-                title: "Здоровье",
-                icon: "icon-heart-puls",
-                listings: "684 объявлений",
-              },
-              {
-                title: "Украшения и бижутерия",
-                icon: "icon-jewelry",
-                listings: "4 147 объявлений",
-              },
-              {
-                title: "Канцелярия",
-                icon: "icon-pencil",
-                listings: "101 объявлений",
-              },
-              {
-                title: "Новые легковые автомобили",
-                icon: "icon-car",
-                listings: "847 объявлений",
-              },
-              {
-                title: "Личная гигиена",
-                icon: "icon-cleaning",
-                listings: "741 объявлений",
-              },
-              {
-                title: "Электроника",
-                icon: "icon-pc-phone",
-                listings: "4 147 объявлений",
-              },
-              {
-                title: "Домашняя утварь",
-                icon: "icon-blender",
-                listings: "4 147 объявлений",
-              },
-              {
-                title: "Спорт и отдых",
-                icon: "icon-umbrella",
-                listings: "741 объявлений",
-              },
-              {
-                title: "Мототранспорт",
-                icon: "icon-motocycle",
-                listings: "4 147 объявлений",
-              },
-              {
-                title: "Аксессуары",
-                icon: "icon-backpack",
-                listings: "574 объявлений",
-              },
-            ];
-
-            const categoriesGrid = document.getElementById("categoriesGrid");
-
-// Function to create each category card
-function createCategoryCard(category) {
-  return `
-    <div class="flex items-center justify-between p-4 w-[368px] h-[85px] relative bg-white rounded-2xl border border-gray-100 space-x-4 mr-10 mb-5 hover:shadow-lg transition-shadow duration-300">
-      <div class="p-2 w-[64px] h-[64px] bg-white absolute left-[-20px] flex items-center justify-center border rounded-xl border-red-500" style="box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08); border-color: #EAEDF0;">
-        <i class="${category.icon} text-blue-100 text-2xl"></i>
+        <!-- <div id="categoriesGrid" class="grid grid-cols-3 grid-rows-7 pt-[20px] group">
+          <div
+          class="subcategories-dropdown hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
+        ></div>
+        </div> -->
       </div>
-      <div class="absolute left-[50px]">
-        <h3 class="text-lg font-medium text-gray-900">${category.title}</h3>
-        <p class="text-sm text-gray-500">${category.listings}</p>
-      </div>
-      <div class="ml-auto text-gray-400 absolute right-[12px] rotate-[-90deg]">
-        <i class="icon-chevron"></i>
-      </div>
-    </div>
-  `;
-}
-
-// Append each category card to the grid
-categories.forEach((category) => {
-  categoriesGrid.innerHTML += createCategoryCard(category);
-});
-          </script>
-        </div>
-      </div>
-
+      <section
+      data-section="main"
+      class="categories container mx-auto grid grid-cols-3 gap-x-[72px] gap-y-5 pt-20 pl-8"
+    >
+      <div
+        class="subcategories-dropdown hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
+      ></div>
+    </section>
       <div
         class="flex py-4 flex-col items-center justify-center w-full pt-50 mt-[10px] px-[30px]"
       >
@@ -196,120 +88,7 @@ categories.forEach((category) => {
           class="container justify-center items-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 "
         ></div>
 
-        <script>
-          const products = [
-            {
-              name: "Kenem Cornelian Diamond for Him edition",
-              price: "2 599 000",
-              image: "cap_1.png",
-              time: "Вчера, 19:20",
-              location: "г. Ташкент",
-              phone: "+998 71 200 70 07",
-            },
-            {
-              name: "Chevrolet Onix 1.2 Turbo в наличии",
-              price: "204 000 000",
-              image: "car_1.png",
-              time: "Вчера, 19:20",
-              location: "г. Самарканд",
-              phone: "+998 71 200 70 07",
-            },
-            {
-              name: "7Saber Trucker Cap",
-              price: "280 000",
-              image: "cap_2.png",
-              time: "Вчера, 19:20",
-              location: "г. Ташкент",
-              phone: "+998 71 200 70 07",
-            },
-            {
-              name: "Оригинальные кроссовки Nike Air Max Plus",
-              price: "4 820 000",
-              image: "sneakers_1.png",
-              time: "Вчера, 19:20",
-              location: "г. Ташкент",
-              phone: "+998 71 200 70 07",
-            },
-            {
-              name: "Оригинальные кроссовки Nike Air Max 97",
-              price: "4 820 000",
-              image: "sneakers_2.png",
-              time: "Вчера, 19:20",
-              location: "г. Ташкент",
-              phone: "+998 71 200 70 07",
-            },
-            {
-              name: "Оригинальные кроссовки Nike Air Max 97",
-              price: "4 820 000",
-              image: "watches.png",
-              time: "Вчера, 19:20",
-              location: "г. Ташкент",
-              phone: "+998 71 200 70 07",
-            },
-            {
-              name: "Лучший кроссовер Geely Monjaro Limited Edition",
-              price: "320 000 000",
-              image: "car_2.png",
-              time: "Вчера, 19:20",
-              location: "г. Ташкент",
-              phone: "+998 71 200 70 07",
-            },
-            {
-              name: "Стайлер для волос Dyson airwrap complete long",
-              price: "500 000",
-              image: "dyson.png",
-              time: "Вчера, 19:20",
-              location: "г. Ташкент",
-              phone: "+998 71 200 70 07",
-            },
-          ];
-
-          function createProductCard(product) {
-            return `
-            
-                 <div class="w-full h-full bg-white rounded-lg shadow-md mt-10 group ">
-    
-      <div class="relative">
-    
-         
-        <img src="/products/${product.image}" class="bg-[url('/products/${product.image}')] w-full h-[240px] rounded-t-[12px] object-cover hover:scale-105 transition-transform duration-300" alt="${product.name}">
-
-              <i class="icon-heart text-4xl		 text-white absolute top-2 left-2 pt-[8px] pl-[8px] w-[120px] "></i>
-     
-      </div>
-
-  <div class="p-4">
-    
-      <div class="mt-3">
-        <span class="inline-block bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded">
-            ${product.location}
-        </span>
-    </div>
-
-    <h3 class="mt-2 text-black-100 group-hover:text-blue-600 font-semibold">
-      ${product.name}
-    </h3>
-
-    <p class="text-gray-500 text-xs mt-1">${product.time}</p>
-
-    <p class="text-gray-200 font-medium text-sm mt-1">${product.phone}</p>
-
-    <div class="mt-3"><span class="text-2xl font-bold text-gray-900">${product.price}</span>
-
-        <span class="text-blue-600 text-sm font-semibold">UZS</span>
-    </div>
-  
-  </div>
-  </div>
-            `;
-          }
-          const productGrid = document.getElementById("product-grid");
-
-          products.forEach((product) => {
-            productGrid.innerHTML += createProductCard(product);
-          });
-        </script>
-
+       
         <button
           class="bg-gray-100 mt-[40px] font-bold text-black-100 py-2 px-4 rounded-full border border-[rgba(214, 214, 214, 0.50);] hover:bg-gray-200 hover:text-white"
         >
@@ -352,5 +131,13 @@ categories.forEach((category) => {
         </div>
       </div>
     </footer>
+
+ <script>
+
+
+</script>
+  
+
+  <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
