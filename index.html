@@ -12,9 +12,9 @@
     <header
       class="bg-white shadow-sm py-5 px-6 flex items-center justify-between group relative"
     >
-      <div class="flex items-center z-0">
+      <div class="flex items-center z-0 px-[50px]">
         <div class="ml-4 flex items-center space-x-4">
-          <img src="/logo/Language.svg" alt="lang" /><span>Русский</span></option>
+          <img src="/logo/Language.svg" alt="lang" />
            
           <span class="text-black font-semibold flex justify-between"
             >Русский</span
@@ -29,8 +29,8 @@
         alt="77.uz Logo"
         class="w-170 h-100 absolute top-0 left-1/2 -translate-x-1/2"
       />
-      <div class="flex items-center space-x-6">
-        <button class="text-black font-semibold">Избранные</button>
+      <div class="flex items-center justify-center space-x-6 px-[50px] relative">
+        <button class="text-black font-semibold"><i class="icon-heart text-blue-100 absolute font-bold top-[2px] left-[25px] text-[20px]"></i> Избранные</button>
         <button class="text-black font-semibold">Войти</button>
       </div>
     </header>
@@ -55,7 +55,7 @@
         </button>
       </div>
       <div
-        class="flex flex-col items-center justify-center w-full pt-50 bg-white mt-[29px] pt-[20px]"
+        class="flex flex-col items-center justify-center w-full  bg-white mt-[29px] pt-[20px]  pb-[50px]"
       >
         <h2 class="font-bold text-4xl">Категории</h2>
         <p class="text-[#8E9297] text-x1s mt-[10px]">
@@ -66,15 +66,18 @@
           class="subcategories-dropdown hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
         ></div>
         </div> -->
-      </div>
-      <section
+     
+        <section
       data-section="main"
-      class="categories container mx-auto grid grid-cols-3 gap-x-[72px] gap-y-5 pt-20 pl-8"
+      class="categories container mx-auto gap-x-[72px] gap-y-5 grid gap-6 grid-cols-1 pt-20 pl-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
     >
       <div
-        class="subcategories-dropdown hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
-      ></div>
+        class="subcategories-dropdown group hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
+      >
+    </div>
     </section>
+      </div>
+   
       <div
         class="flex py-4 flex-col items-center justify-center w-full pt-50 mt-[10px] px-[30px]"
       >

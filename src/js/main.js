@@ -20,7 +20,7 @@ const hideEl = (el, display = "block") => {
   const getCateogryTemplate = (category, idx) => {
     return `
       <div
-        class="category transition-all duration-200 rounded-xl border border-grey-4 hover:border-blue flex items-center gap-3 shadow-category py-[22px] pr-3 bg-white cursor-pointer group"
+        class="category transition-all duration-200 rounded-xl border border-grey-4 hover:border-blue flex items-center gap-3 shadow-category py-[22px] pr-3 bg-white cursor-pointer group-hover:bg-blue group-hover:border-white/20 group"
         data-index="${idx}"
         onclick="toggleDropdown(${idx})"
       >
@@ -32,7 +32,7 @@ const hideEl = (el, display = "block") => {
         </div>
         <div class="flex-grow">
           <h3>${category.title}</h3>
-          <p>${category.announcementCount} объявлений</p>
+          <p>${category.listings} объявлений</p>
         </div>
         <i class="icon-chevron rotate-[-90deg]"></i>   </div>
     `;
@@ -52,7 +52,7 @@ const hideEl = (el, display = "block") => {
     return `
       <a href="#" class="flex items-center justify-between gap-3 p-3">
         <h4>${subcategory.name}</h4>
-       <i class="icon-chevron"></i>
+        <i class="icon-chevron rotate-[-90deg]"></i>
       </a>
     `;
   };
