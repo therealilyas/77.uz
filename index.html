@@ -13,22 +13,19 @@
       class="bg-white shadow-sm py-5 px-6 flex items-center justify-between group relative"
     >
       <div class="flex items-center z-0 px-[50px]">
-        <div class="ml-4 flex items-center space-x-4">
+        <div class="ml-2 md:ml-4 flex items-center space-x-2 md:space-x-4">
           <img src="/logo/Language.svg" alt="lang" />
-           
-          <span class="text-black font-semibold flex justify-between"
-            >Русский</span
-          >
-        
-          
-          <span class="text-black font-semibold">+998 88 500 50 00</span>
+          <span class="text-black font-semibold hidden md:flex justify-between">Русский</span>
+          <a href="tel:+998885005000" class="text-black font-semibold text-sm md:text-base">+998 88 500 50 00</a>
         </div>
       </div>
+
+
       <img
-        src="/logo/logo.svg"
-        alt="77.uz Logo"
-        class="w-170 h-100 absolute top-0 left-1/2 -translate-x-1/2"
-      />
+  src="/logo/logo.svg"
+  alt="77.uz Logo"
+  class="absolute top-0 left-1/2 -translate-x-1/2 transform w-24 h-12 sm:w-32 sm:h-16 md:w-[2800px] md:h-[120px] lg:w-[320px] lg:h-[150px]"
+/>
       <div class="flex items-center justify-center space-x-6 px-[50px] relative">
         <button class="text-black font-semibold"><i class="icon-heart text-blue-100 absolute font-bold top-[2px] left-[25px] text-[20px]"></i> Избранные</button>
         <button class="text-black font-semibold">Войти</button>
@@ -39,8 +36,9 @@
       class="flex py-4 flex-col items-center justify-center w-full pt-50 px-[30px]"
     >
       <div
-        class="flex bg-white items-center w-[580px] h-[60px] px-1 rounded-[8px] mt-20"
+        class="flex md:flex-row bg-white items-center  w-full max-w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto "
       >
+
         <i class="icon-search text-base text-[#8E9297] px-2"></i>
         <input
           type="text"
@@ -54,6 +52,8 @@
           Поиск
         </button>
       </div>
+
+      
       <div
         class="flex flex-col items-center justify-center w-full  bg-white mt-[29px] pt-[20px]  pb-[50px]"
       >
@@ -61,11 +61,7 @@
         <p class="text-[#8E9297] text-x1s mt-[10px]">
           Вы можете найти все категории, которые вам нужны от покупателя
         </p>
-        <!-- <div id="categoriesGrid" class="grid grid-cols-3 grid-rows-7 pt-[20px] group">
-          <div
-          class="subcategories-dropdown hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
-        ></div>
-        </div> -->
+       
      
         <section
       data-section="main"
@@ -105,26 +101,26 @@
        <a href="#"><img src="/public/logo/Logo_footer.png" alt="Logo" class=" mx-auto mt-[-90px] "></a> 
         <p class="text-black-500 mb-4 max-w-[670px] mx-auto"> <span>77.uz</span> marketplace - это виртуальная платформа в Узбекистане,
           которая облегчает покупки и продажи, связывая продавцов с потенциальными клиентами. </p>
-        <div class="flex justify-center space-x-4 mb-4">
-          <ul class="flex w-[800px] justify-between">
-            <li class="flex">
-              <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
-              <a href="#" class=" text-[#16191D] text-center font-[Inter] text-[20px] font-semibold leading-[130%]">Доска
-                объявлений</a>
-            </li>
-            <li class="flex">
-              <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
-              <a href="#"
-                class=" text-[#16191D] text-center font-[Inter] text-[20px] font-semibold leading-[130%]">Условия
-                пользования</a>
-            </li>
-            <li class="flex">
-              <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
-              <a href="#" class=" text-[#16191D] text-center font-[Inter] text-[20px] font-semibold leading-[130%]">+998
-                88 500 50 00</a>
-            </li>
-          </ul>
-        </div>
+       <div class="flex flex-col md:flex-row justify-center space-x-4 mb-4">
+      <ul class="flex w-full max-w-[800px] justify-between">
+        <li class="flex">
+          <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
+          <a href="#" class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]">Доска
+            объявлений</a>
+        </li>
+        <li class="flex">
+          <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
+          <a href="#"
+            class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]">Условия
+            пользования</a>
+        </li>
+        <li class="flex">
+          <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
+          <a href="#" class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]">+998
+            88 500 50 00</a>
+        </li>
+      </ul>
+    </div>
   
       </div>
       <div class="border-t  border-gray-200 mb-2 px-12">
