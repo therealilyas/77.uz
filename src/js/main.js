@@ -43,7 +43,7 @@ const hideEl = (el, display = "block") => {
     const categoriesSection = document.querySelector("section.categories");
   
     categories.forEach((category, idx) => {
-      categoriesSection.innerHTML =categoriesSection.innerHTML +  getCateogryTemplate(category, idx);
+      categoriesSection.innerHTML = categoriesSection.innerHTML +  getCateogryTemplate(category, idx);
     });
   };
   
@@ -51,7 +51,7 @@ const hideEl = (el, display = "block") => {
   
   const getSubcategoryTemplate = (subcategory) => {
     return `
-      <a href="#" class="flex items-center justify-between gap-3 p-3">
+      <a href="#" class="flex items-center justify-between gap-3 p-3 hover:text-blue-100 transition duration-200">
         <h4>${subcategory.name}</h4>
         <i class="icon-chevron rotate-[-90deg]"></i>
       </a>
@@ -107,30 +107,6 @@ const hideEl = (el, display = "block") => {
     activeIdx = categoryIdx;
   };
 
-// const categoriesGrid = document.getElementById("categoriesGrid");
-
-// function createCategoryCard(category) {
-// return `
-// <div class="flex items-center justify-between p-4 w-[368px] h-[85px] relative bg-white rounded-2xl border border-gray-100 space-x-4 mr-10 mb-5 hover:shadow-lg transition-shadow duration-300">
-// <div class="p-2 w-[64px] h-[64px] bg-white absolute left-[-20px] flex items-center justify-center border rounded-xl border-red-500" style="box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08); border-color: #EAEDF0;">
-// <i class="${category.icon} text-blue-100 text-2xl"></i>
-// </div>
-// <div class="absolute left-[50px]">
-// <h3 class="text-lg font-medium text-gray-900">${category.title}</h3>
-// <p class="text-sm text-gray-500">${category.listings}</p>
-// </div>
-// <div class="ml-auto text-gray-400 absolute right-[12px] rotate-[-90deg]">
-// <i class="icon-chevron"></i>
-// </div>
-// </div>
-// `;
-// }
-
-// categories.forEach((category) => {
-// categoriesGrid.innerHTML += createCategoryCard(category);
-// });
-
-
 
 
 function createProductCard(product) {
@@ -138,10 +114,10 @@ function createProductCard(product) {
     
          <div class="w-full h-full bg-white rounded-lg shadow-md mt-10 group ">
 
-<div class="relative">
+<div class="relative ">
 
  
-<img src="/products/${product.image}" class="bg-[url('/products/${product.image}')] w-full h-[240px] rounded-t-[12px] object-cover hover:scale-105 transition-transform duration-300" alt="${product.name}">
+<img src="/products/${product.image}" class="bg-[url('/products/${product.image}')] w-full h-[240px] rounded-t-[12px] object-cover" alt="${product.name}">
 
       <i class="icon-heart text-4xl		 text-white absolute top-2 left-2 pt-[8px] pl-[8px] w-[120px] "></i>
 
@@ -150,7 +126,7 @@ function createProductCard(product) {
 <div class="p-4">
 
 <div class="mt-3">
-<span class="inline-block bg-gray-100 text-gray-600 text-xs font-medium px-2 py-1 rounded">
+<span class="inline-block bg-gray-100 text-gray-600 group-hover:bg-blue-100 group-hover:text-white text-xs font-medium px-2 py-1 rounded">
     ${product.location}
 </span>
 </div>
@@ -163,7 +139,7 @@ ${product.name}
 
 <p class="text-gray-200 font-medium text-sm mt-1">${product.phone}</p>
 
-<div class="mt-3"><span class="text-2xl font-bold text-gray-900">${product.price}</span>
+<div class="mt-3"><span class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 ">${product.price}</span>
 
 <span class="text-blue-600 text-sm font-semibold">UZS</span>
 </div>
