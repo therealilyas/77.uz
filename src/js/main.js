@@ -19,22 +19,23 @@ const hideEl = (el, display = "block") => {
   
   const getCateogryTemplate = (category, idx) => {
     return `
+    <div class="group">
       <div
-        class="category transition-all duration-200 rounded-xl border border-grey-4 hover:border-blue flex items-center gap-3 shadow-category py-[22px] pr-3 bg-white cursor-pointer group-hover:bg-blue group-hover:border-white/20 group"
+        class="category transition-all duration-200 rounded-xl border border-grey-4 group-hover:bg-blue-100 group-hover:text-white group-hover:border-white/20 flex items-center gap-3 shadow-category py-[22px] pr-3 bg-white cursor-pointer"
         data-index="${idx}"
         onclick="toggleDropdown(${idx})"
       >
         <div
-          class="category__img border boder-gray-4 shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] rounded-xl p-4 -ml-8 bg-white transition-all duration-200 group-hover:bg-blue group-hover:border-white/20"
+          class="group-hover:bg-blue-100 border boder-gray-4 shadow-[0_4px_20px_0_rgba(0,0,0,0.08)] rounded-xl p-4 -ml-8 bg-white transition-all duration-200 group-hover:bg-blue group-hover:border-white/20"
         >
-        <i class="${category.icon} icon-blue  text-blue-100 group-hover:icon-white text-2xl"></i>
+        <i class="${category.icon} icon-blue  text-blue-100  group-hover:text-white text-2xl"></i>
           
         </div>
         <div class="flex-grow">
           <h3>${category.title}</h3>
           <p>${category.listings} объявлений</p>
         </div>
-        <i class="icon-chevron rotate-[-90deg]"></i>   </div>
+        <i class="icon-chevron rotate-[-90deg]"></i>   </div> </div>
     `;
   };
   
