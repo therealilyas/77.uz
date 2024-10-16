@@ -51,7 +51,7 @@ const hideEl = (el, display = "block") => {
   
   const getSubcategoryTemplate = (subcategory) => {
     return `
-      <a href="#" class="flex items-center justify-between gap-3 p-3 hover:text-blue-100 transition duration-200">
+      <a href="#" class="flex items-center justify-between gap-3 p-3 hover:text-blue-100 hover:font-bold transition duration-200 ">
         <h4>${subcategory.name}</h4>
         <i class="icon-chevron rotate-[-90deg]"></i>
       </a>
