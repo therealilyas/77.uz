@@ -2,8 +2,7 @@ export const categories = [
   {
     title: "Для женщин",
     icon: "icon-girl",
-    announcementCount: 4142,
-    subcategoriesCount: 12,
+    listings: "4 147 объявлений",
     subcategories: [
       {
         id: 11,
@@ -25,8 +24,7 @@ export const categories = [
   {
     title: "Для мужчин",
     icon: "icon-boy",
-    announcementCount: 4142,
-    subcategoriesCount: 12,
+    listings: "4 147 объявлений",
   },
   {
     title: "Детские товары",
