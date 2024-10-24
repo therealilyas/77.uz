@@ -11,13 +11,35 @@
     <header
       class="bg-white shadow-sm py-5 px-6 flex items-center justify-between group relative"
     >
-      <div class="flex items-center z-0 px-[50px]">
+      <!-- <div class="flex items-center z-0 px-[50px]">
         <div class="ml-2 md:ml-4 flex items-center space-x-2 md:space-x-4">
           <img src="/logo/Language.svg" alt="lang" />
           <span class="text-black font-semibold hidden md:flex justify-between">Русский</span>
           <a href="tel:+998885005000" class="text-black font-semibold text-sm md:text-base">+998 88 500 50 00</a>
         </div>
+      </div> -->
+      <div class="flex items-center z-0 px-[50px] relative">
+        <div class="ml-2 md:ml-4 flex items-center space-x-2 md:space-x-4">
+          <img id="language-flag" src="/flags/rus.png" alt="flag" class="w-6 h-6" />
+          <div class="relative">
+            <button id="language-button" class="text-black font-semibold hidden md:flex items-center space-x-2">
+              <span>Русский</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <ul id="language-dropdown" class="absolute hidden bg-white border border-gray-300 rounded-lg shadow-md mt-2 w-40">
+              <li class="p-2 hover:bg-gray-100 cursor-pointer" data-lang="Русский" data-flag="/flags/ru.svg">Русский</li>
+              <li class="p-2 hover:bg-gray-100 cursor-pointer" data-lang="O'zbekcha" data-flag="/flags/uzb.svg">O'zbekcha</li>
+            </ul>
+          </div>
+          <a href="tel:+998885005000" class="text-black font-semibold text-sm md:text-base">+998 88 500 50 00</a>
+        </div>
       </div>
+      
+      <style>
+      
+      </style>
 
 
       <img
@@ -26,16 +48,18 @@
   class="absolute top-0 left-1/2 -translate-x-1/2 transform w-24 h-12 sm:w-32 sm:h-16 md:w-[2800px] md:h-[120px] lg:w-[320px] lg:h-[150px]"
 />
       <div class="flex items-center justify-center space-x-6 px-[50px] relative">
-        <button class="text-black font-semibold"><i class="icon-heart text-blue-100 absolute font-bold top-[2px] left-[25px] text-[20px]"></i> Избранные</button>
-        <button class="text-black font-semibold">Войти</button>
+        <button class="text-black font-semibold"><i class="icon-heart text-blue-100 absolute font-bold top-[11px] left-[20px] text-[20px]"></i> Избранные</button>
+        <button class="text-black bg-[#EAEDF0] px-[24px] py-[10px] rounded-[8px] font-bold">Войти 
+          <i class="icon-logout text-black-100 px-2" style="font-weight: bold;"></i>
+        </button>
       </div>
     </header>
 
     <div
-      class="flex py-4 flex-col items-center justify-center w-full pt-50 px-[30px]"
+      class="flex  flex-col relative items-center justify-center w-full mt-[100px] px-[30px]"
     >
       <div
-        class="flex md:flex-row bg-white items-center  w-full max-w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto "
+        class="flex md:flex-row absolute top-[-80px] border group border-gray-100 bg-white items-center  w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto "
       >
 
         <i class="icon-search text-base text-[#8E9297] px-2"></i>
@@ -54,7 +78,7 @@
 
       
       <div
-        class="flex flex-col items-center justify-center w-full  bg-white mt-[29px] pt-[20px]  pb-[50px]"
+        class="flex flex-col items-center justify-center w-full  bg-white mt-[29px] pt-[80px]  pb-[50px]"
       >
         <h2 class="font-bold text-4xl">Категории</h2>
         <p class="text-[#8E9297] text-x1s mt-[10px]">

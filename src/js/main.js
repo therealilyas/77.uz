@@ -51,7 +51,7 @@ const hideEl = (el, display = "block") => {
   
   const getSubcategoryTemplate = (subcategory) => {
     return `
-      <a href="#" class="flex items-center justify-between gap-3 p-3 hover:text-blue-100 hover:font-bold transition duration-200 ">
+      <a href="#" class="flex items-center justify-between font-semibold  gap-3 p-3 hover:text-blue-100 hover:font-bold transition duration-200 ">
         <h4>${subcategory.name}</h4>
         <i class="icon-chevron rotate-[-90deg]"></i>
       </a>
@@ -153,3 +153,33 @@ ${product.name}
   products.forEach((product) => {
     productGrid.innerHTML += createProductCard(product);
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const languageButton = document.getElementById('language-button');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageFlag = document.getElementById('language-flag'); 
+  
+    languageButton.addEventListener('click', function () {
+      languageDropdown.classList.toggle('show');
+    });
+  
+    languageDropdown.addEventListener('click', function (event) {
+      if (event.target.tagName === 'LI') {
+        const selectedLanguage = event.target.getAttribute('data-lang');
+        const selectedFlag = event.target.getAttribute('data-flag');
+        
+        languageButton.querySelector('span').textContent = selectedLanguage;
+        languageFlag.src = selectedFlag;
+  
+        languageDropdown.classList.remove('show');
+        console.log('Language selected:', selectedLanguage);
+      }
+    });
+  
+    document.addEventListener('click', function (event) {
+      if (!languageButton.contains(event.target) && !languageDropdown.contains(event.target)) {
+        languageDropdown.classList.remove('show');
+      }
+    });
+  });
+  

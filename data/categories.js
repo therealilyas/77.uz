@@ -29,19 +29,19 @@ export const categories = [
     subcategoriesCount: 12,
     subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 14,
+        slug: "laptops",
+        name: "Ноутбуки",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 15,
+        slug: "tablets",
+        name: "Планшеты",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 16,
+        slug: "headphones",
+        name: "Наушники",
       },
     ],
   },
@@ -49,21 +49,22 @@ export const categories = [
     title: "Детские товары",
     icon: "icon-carriage",
     listings: 635,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 17,
+        slug: "speakers",
+        name: "Динамики",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 18,
+        slug: "cameras",
+        name: "Камеры",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 19,
+        slug: "smart-home-devices",
+        name: "Умные устройства для дома",
       },
     ],
   },
@@ -71,21 +72,22 @@ export const categories = [
     title: "Обувь",
     icon: "icon-sneakers",
     listings: 684,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
+        id: 20,
+        slug: "gaming-consoles",
+        name: "Игровые консоли",
+      },
+      {
+        id: 21,
         slug: "smartphones",
         name: "Смартфоны",
       },
       {
-        id: 12,
+        id: 22,
         slug: "accessories",
         name: "Аксессуары для смартфонов и телефонов",
-      },
-      {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
       },
     ],
   },
@@ -93,21 +95,22 @@ export const categories = [
     title: "Автотовары",
     icon: "icon-spanner",
     listings: 63,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
-      },
-      {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
-      },
-      {
-        id: 13,
+        id: 23,
         slug: "smart-watches",
         name: "Смарт-часы",
+      },
+      {
+        id: 24,
+        slug: "laptops",
+        name: "Ноутбуки",
+      },
+      {
+        id: 25,
+        slug: "tablets",
+        name: "Планшеты",
       },
     ],
   },
@@ -115,21 +118,22 @@ export const categories = [
     title: "Дача, сады и огороды",
     icon: "icon-sapling",
     listings: 847,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 26,
+        slug: "headphones",
+        name: "Наушники",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 27,
+        slug: "speakers",
+        name: "Динамики",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 28,
+        slug: "cameras",
+        name: "Камеры",
       },
     ],
   },
@@ -137,21 +141,22 @@ export const categories = [
     title: "Бытовая техника",
     icon: "icon-fridge",
     listings: 547,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
+        id: 29,
+        slug: "smart-home-devices",
+        name: "Умные устройства для дома",
+      },
+      {
+        id: 30,
+        slug: "gaming-consoles",
+        name: "Игровые консоли",
+      },
+      {
+        id: 31,
         slug: "smartphones",
         name: "Смартфоны",
-      },
-      {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
-      },
-      {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
       },
     ],
   },
@@ -159,21 +164,22 @@ export const categories = [
     title: "Красота",
     icon: "icon-beauty",
     listings: 574,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
-      },
-      {
-        id: 12,
+        id: 32,
         slug: "accessories",
         name: "Аксессуары для смартфонов и телефонов",
       },
       {
-        id: 13,
+        id: 33,
         slug: "smart-watches",
         name: "Смарт-часы",
+      },
+      {
+        id: 34,
+        slug: "laptops",
+        name: "Ноутбуки",
       },
     ],
   },
@@ -181,21 +187,22 @@ export const categories = [
     title: "Здоровье",
     icon: "icon-heart-puls",
     listings: 684,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 35,
+        slug: "tablets",
+        name: "Планшеты",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 36,
+        slug: "headphones",
+        name: "Наушники",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 37,
+        slug: "speakers",
+        name: "Динамики",
       },
     ],
   },
@@ -203,21 +210,22 @@ export const categories = [
     title: "Украшения и бижутерия",
     icon: "icon-jewelry",
     listings: 4147,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 38,
+        slug: "cameras",
+        name: "Камеры",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 39,
+        slug: "smart-home-devices",
+        name: "Умные устройства для дома",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 40,
+        slug: "gaming-consoles",
+        name: "Игровые консоли",
       },
     ],
   },
@@ -225,43 +233,46 @@ export const categories = [
     title: "Канцелярия",
     icon: "icon-pencil",
     listings: 101,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
+        id: 41,
         slug: "smartphones",
         name: "Смартфоны",
       },
       {
-        id: 12,
+        id: 42,
         slug: "accessories",
         name: "Аксессуары для смартфонов и телефонов",
       },
       {
-        id: 13,
+        id: 43,
         slug: "smart-watches",
         name: "Смарт-часы",
       },
+    
     ],
   },
   {
     title: "Новые легковые автомобили",
     icon: "icon-car",
     listings: 847,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 44,
+        slug: "laptops",
+        name: "Ноутбуки",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 45,
+        slug: "tablets",
+        name: "Планшеты",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 46,
+        slug: "headphones",
+        name: "Наушники",
       },
     ],
   },
@@ -269,21 +280,22 @@ export const categories = [
     title: "Личная гигиена",
     icon: "icon-cleaning",
     listings: 741,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 47,
+        slug: "speakers",
+        name: "Динамики",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 48,
+        slug: "cameras",
+        name: "Камеры",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 49,
+        slug: "smart-home-devices",
+        name: "Умные устройства для дома",
       },
     ],
   },
@@ -291,21 +303,22 @@ export const categories = [
     title: "Электроника",
     icon: "icon-pc-phone",
     listings: 4147,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
+        id: 50,
+        slug: "gaming-consoles",
+        name: "Игровые консоли",
+      },
+      {
+        id: 51,
         slug: "smartphones",
         name: "Смартфоны",
       },
       {
-        id: 12,
+        id: 52,
         slug: "accessories",
         name: "Аксессуары для смартфонов и телефонов",
-      },
-      {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
       },
     ],
   },
@@ -313,21 +326,22 @@ export const categories = [
     title: "Домашняя утварь",
     icon: "icon-blender",
     listings: 4147,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
-      },
-      {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
-      },
-      {
-        id: 13,
+        id: 53,
         slug: "smart-watches",
         name: "Смарт-часы",
+      },
+      {
+        id: 54,
+        slug: "laptops",
+        name: "Ноутбуки",
+      },
+      {
+        id: 55,
+        slug: "tablets",
+        name: "Планшеты",
       },
     ],
   },
@@ -335,21 +349,22 @@ export const categories = [
     title: "Спорт и отдых",
     icon: "icon-umbrella",
     listings: 741,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 56,
+        slug: "headphones",
+        name: "Наушники",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 57,
+        slug: "speakers",
+        name: "Динамики",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 58,
+        slug: "cameras",
+        name: "Камеры",
       },
     ],
   },
@@ -357,16 +372,17 @@ export const categories = [
     title: "Мототранспорт",
     icon: "icon-motocycle",
     listings: 4147,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 59,
+        slug: "smart-home-devices",
+        name: "Умные устройства для дома",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 60,
+        slug: "gaming-consoles",
+        name: "Игровые консоли",
       },
       {
         id: 13,
@@ -379,21 +395,22 @@ export const categories = [
     title: "Аксессуары",
     icon: "icon-backpack",
     listings: 574,
-    subcategoriesCount: 12, subcategories: [
+    subcategoriesCount: 12,
+    subcategories: [
       {
-        id: 11,
-        slug: "smartphones",
-        name: "Смартфоны",
+        id: 56,
+        slug: "headphones",
+        name: "Наушники",
       },
       {
-        id: 12,
-        slug: "accessories",
-        name: "Аксессуары для смартфонов и телефонов",
+        id: 57,
+        slug: "speakers",
+        name: "Динамики",
       },
       {
-        id: 13,
-        slug: "smart-watches",
-        name: "Смарт-часы",
+        id: 58,
+        slug: "cameras",
+        name: "Камеры",
       },
     ],
   },
