@@ -20,7 +20,7 @@
       </div> -->
       <div class="flex items-center z-0 px-[50px] relative">
         <div class="ml-2 md:ml-4 flex items-center space-x-2 md:space-x-4">
-          <img id="language-flag" src="/flags/rus.png" alt="flag" class="w-6 h-6" />
+          <img id="language-flag" src="/flags/ru.svg" alt="flag" class="w-6 h-6" />
           <div class="relative">
             <button id="language-button" class="text-black font-semibold hidden md:flex items-center space-x-2">
               <span>Русский</span>
@@ -56,17 +56,17 @@
     </header>
 
     <div
-      class="flex  flex-col relative items-center justify-center w-full mt-[100px] px-[30px]"
+      class="flex  flex-col relative items-center justify-center w-full px-[30px]"
     >
-      <div
-        class="flex md:flex-row absolute top-[-80px] border group border-gray-100 bg-white items-center  w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto "
+      <!-- <div
+        class="flex md:flex-row relative z-10 top-[-80px] border group border-gray-100 bg-white items-center  w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto "
       >
 
         <i class="icon-search text-base text-[#8E9297] px-2"></i>
         <input
           type="text"
           placeholder="Что вы ищите?"
-          class="w-[473px] h-[58px] focus:outline-none border-gray-300 py-2 rounded-l"
+          class="search-input w-[473px] h-[58px] focus:outline-none border-gray-300 py-2 rounded-l"
         />
 
         <button
@@ -74,9 +74,43 @@
         >
           Поиск
         </button>
-      </div>
 
-      
+        <div class="dropdown-wrapper opacity-0">
+          <div class="fixed inset-0 w-screen h-screen bg-black-100"></div>
+          <ul class="absolute"></ul>
+        </div>
+  
+  
+      </div> -->
+
+      <div class="flex flex-col relative items-center justify-center w-full mt-[100px] px-[30px]">
+        <!-- Search Container -->
+        <div class="flex md:flex-row absolute top-[-80px] border-none group  items-center px-1 rounded-[8px] mt-20 mx-auto">
+         <div class="search relative z-10 flex md:flex-row top-[-80px] border group border-gray-100 bg-white items-center w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto">
+          <i class="icon-search text-base text-[#8E9297]  px-2"></i>
+          <!-- Search Input -->
+          <input
+            type="text"
+            placeholder="Что вы ищите?"
+            class="search-input w-[473px]  h-[58px] focus:outline-none border-gray-300 py-2 rounded-l"
+          />
+          <!-- Search Button -->
+          <button class="bg-black-100 w-[107px] h-[44px] font-semibold text-white px-6 py-2 rounded-[8px] ">
+            Поиск
+          </button>
+        </div>
+          <!-- Dropdown Wrapper (hidden by default) -->
+          <div class="dropdown-wrapper hidden opacity-0 absolute top-[60px]">
+            <div class="fixed inset-0 w-screen h-screen bg-[#17181A66] "></div>
+            <ul class="absolute bg-white border  border-gray-200 rounded-md shadow-lg mt-2  w-[580px]">
+              <li class="p-2 text-gray-500 cursor-pointer">История поиска</li>
+              <li class="p-2 flex items-center justify-between h-[52px] w-full hover:bg-[#F0F3F7] cursor-pointer"><div class="flex items-center justify-between"><img src="./images/star.svg" alt="star"><span class="ml-2 font-semibold">Hello</span> </div><i class="icon-chevron text-gray-300 rotate-[-90deg]"></i></li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+         
       <div
         class="flex flex-col items-center justify-center w-full  bg-white mt-[29px] pt-[80px]  pb-[50px]"
       >
@@ -117,6 +151,9 @@
           Загрузить больше
         </button>
       </div>
+
+      
+
     </div>
 
     <footer class="bg-white mt-8 py-8 ">
