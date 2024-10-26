@@ -40,7 +40,7 @@ const getCateogryTemplate = (category, idx) => {
 };
 
 const renderCatetories = () => {
-  const categoriesSection = document.querySelector("section.categories");
+  const categoriesSection = document.querySelector("div.categories");
 
   categories.forEach((category, idx) => {
     categoriesSection.innerHTML =
@@ -204,4 +204,27 @@ searchInputEl.addEventListener('click', () => {
         dropdownWrapper.classList.add('hidden');
         dropdownWrapper.classList.remove('opacity-100');
     }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const openModalButton = document.getElementById("openLoginModal");
+  const closeModalButton = document.getElementById("closeLoginModal");
+  const loginModal = document.getElementById("loginModal");
+
+  // Open Modal
+  openModalButton.addEventListener("click", () => {
+    loginModal.classList.remove("hidden");
+  });
+
+  // Close Modal
+  closeModalButton.addEventListener("click", () => {
+    loginModal.classList.add("hidden");
+  });
+
+  // Close Modal by clicking outside
+  window.addEventListener("click", (e) => {
+    if (e.target === loginModal) {
+      loginModal.classList.add("hidden");
+    }
+  });
 });

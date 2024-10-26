@@ -11,126 +11,225 @@
     <header
       class="bg-white shadow-sm py-5 px-6 flex items-center justify-between group relative"
     >
-      <!-- <div class="flex items-center z-0 px-[50px]">
-        <div class="ml-2 md:ml-4 flex items-center space-x-2 md:space-x-4">
-          <img src="/logo/Language.svg" alt="lang" />
-          <span class="text-black font-semibold hidden md:flex justify-between">Русский</span>
-          <a href="tel:+998885005000" class="text-black font-semibold text-sm md:text-base">+998 88 500 50 00</a>
-        </div>
-      </div> -->
       <div class="flex items-center z-0 px-[50px] relative">
         <div class="ml-2 md:ml-4 flex items-center space-x-2 md:space-x-4">
-          <img id="language-flag" src="/flags/ru.svg" alt="flag" class="w-6 h-6" />
+          <img
+            id="language-flag"
+            src="/flags/ru.svg"
+            alt="Russian flag"
+            class="w-6 h-6"
+          />
           <div class="relative">
-            <button id="language-button" class="text-black font-semibold hidden md:flex items-center space-x-2">
+            <button
+              id="language-button"
+              class="text-black font-semibold hidden md:flex items-center space-x-2"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               <span>Русский</span>
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
               </svg>
             </button>
-            <ul id="language-dropdown" class="absolute hidden bg-white border border-gray-300 rounded-lg shadow-md mt-2 w-40">
-              <li class="p-2 hover:bg-gray-100 cursor-pointer" data-lang="Русский" data-flag="/flags/ru.svg">Русский</li>
-              <li class="p-2 hover:bg-gray-100 cursor-pointer" data-lang="O'zbekcha" data-flag="/flags/uzb.svg">O'zbekcha</li>
+            <ul
+              id="language-dropdown"
+              class="absolute hidden bg-white border border-gray-300 rounded-lg shadow-md mt-2 w-40 z-10"
+              role="menu"
+            >
+              <li
+                class="p-2 hover:bg-gray-100 cursor-pointer"
+                data-lang="Русский"
+                data-flag="/flags/ru.svg"
+                role="menuitem"
+              >
+                Русский
+              </li>
+              <li
+                class="p-2 hover:bg-gray-100 cursor-pointer"
+                data-lang="O'zbekcha"
+                data-flag="/flags/uzb.svg"
+                role="menuitem"
+              >
+                O'zbekcha
+              </li>
             </ul>
           </div>
-          <a href="tel:+998885005000" class="text-black font-semibold text-sm md:text-base">+998 88 500 50 00</a>
+          <a
+            href="tel:+998885005000"
+            class="text-black font-semibold text-sm md:text-base"
+            >+998 88 500 50 00</a
+          >
         </div>
       </div>
-      
-      <style>
-      
-      </style>
-
 
       <img
-  src="/logo/logo.svg"
-  alt="77.uz Logo"
-  class="absolute top-0 left-1/2 -translate-x-1/2 transform w-24 h-12 sm:w-32 sm:h-16 md:w-[2800px] md:h-[120px] lg:w-[320px] lg:h-[150px]"
-/>
-      <div class="flex items-center justify-center space-x-6 px-[50px] relative">
-        <button class="text-black font-semibold"><i class="icon-heart text-blue-100 absolute font-bold top-[11px] left-[20px] text-[20px]"></i> Избранные</button>
-        <button class="text-black bg-[#EAEDF0] px-[24px] py-[10px] rounded-[8px] font-bold">Войти 
-          <i class="icon-logout text-black-100 px-2" style="font-weight: bold;"></i>
+        src="/logo/logo.svg"
+        alt="77.uz Logo"
+        class="absolute top-0 left-1/2 -translate-x-1/2 transform w-24 h-12 sm:w-32 sm:h-16 md:w-[2800px] md:h-[120px] lg:w-[320px] lg:h-[150px]"
+      />
+      <div
+        class="flex items-center justify-center space-x-6 px-[50px] relative"
+      >
+        <button class="text-black font-semibold">
+          <i
+            class="icon-heart text-blue-100 absolute font-bold top-[11px] left-[20px] text-[20px]"
+          ></i>
+          Избранные
         </button>
+       
+        <button
+          id="openLoginModal"
+          class="login-btn text-black bg-[#EAEDF0] px-[24px] py-[10px] rounded-[8px] font-bold"
+        >
+          Войти
+          <i
+            class="icon-logout text-black-100 px-2"
+            style="font-weight: bold"
+          ></i>
+        </button>
+
+        <div
+          id="loginModal"
+          class="fixed inset-0 bg-black-100 bg-opacity-50 -left-10 flex items-center justify-center hidden z-50"
+        >
+          <div
+            class="bg-white rounded-lg p-6 max-w-md w-full shadow-lg relative"
+          >
+            <button
+              id="closeLoginModal"
+              class="absolute top-5 right-5 text-black-100 hover:text-gray-700 text-3xl font-bold"
+            >
+              &times;
+            </button>
+
+            <h2 class="text-2xl font-bold text-gray-800">
+              Добро пожаловать!
+            </h2>
+            <p class="text-gray-200 font-normal text-lg mt-2">
+              Войти в систему чтобы торговать в системе
+            </p>
+
+            <form class="mt-4">
+              <div class="mb-4">
+                <label class="block text-gray-500 font-semibold text-base mb-2" for="login">Логин</label>
+                <input
+                  type="text"
+                  id="login"
+                  placeholder="Введите логин"
+                  class="w-full px-3 py-2 bg-gray-100 border-none border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
+                />
+              </div>
+
+              <div class="mb-4 relative">
+                <label class="block text-gray-500 font-semibold text-base mb-2" for="password">Пароль</label>
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="Введите пароль"
+                  class="w-full px-3 py-2 bg-gray-100 border-none border-gray-300 rounded-lg focus:outline-none focus:ring focus:ring-blue-200"
+                />
+              </div>
+
+              <a href="#" class="text-blue-500 hover:underline text-sm"
+                >Забыли пароль?</a
+              >
+
+              <button
+                type="submit"
+                class="w-full mt-12 py-3 text-lg font-semibold bg-blue-500 text-white rounded-lg hover:bg-blue-600"
+              >
+                Войти
+              </button>
+
+              <p class="text-center text-gray-600 mt-4">
+                Хотите стать продавцом?
+              </p>
+              <button
+                class="w-full mt-2 py-3 border text-lg font-semibold border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50"
+              >
+                Подать заявку
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </header>
 
     <div
-      class="flex  flex-col relative items-center justify-center w-full px-[30px]"
+      class="flex flex-col relative items-center justify-center w-full px-[30px]"
     >
-      <!-- <div
-        class="flex md:flex-row relative z-10 top-[-80px] border group border-gray-100 bg-white items-center  w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto "
+      <div
+        class="flex flex-col relative items-center justify-center w-full mt-[100px] px-[30px]"
       >
-
-        <i class="icon-search text-base text-[#8E9297] px-2"></i>
-        <input
-          type="text"
-          placeholder="Что вы ищите?"
-          class="search-input w-[473px] h-[58px] focus:outline-none border-gray-300 py-2 rounded-l"
-        />
-
-        <button
-          class="bg-black-100 w-[107px] h-[44px] font-semibold text-white px-6 py-2 rounded-[8px]"
+        <div
+          class="flex md:flex-row absolute -top-20 border-none group items-center px-1 rounded-lg mt-20 mx-auto"
         >
-          Поиск
-        </button>
-
-        <div class="dropdown-wrapper opacity-0">
-          <div class="fixed inset-0 w-screen h-screen bg-black-100"></div>
-          <ul class="absolute"></ul>
-        </div>
-  
-  
-      </div> -->
-
-      <div class="flex flex-col relative items-center justify-center w-full mt-[100px] px-[30px]">
-        <!-- Search Container -->
-        <div class="flex md:flex-row absolute top-[-80px] border-none group  items-center px-1 rounded-[8px] mt-20 mx-auto">
-         <div class="search relative z-10 flex md:flex-row top-[-80px] border group border-gray-100 bg-white items-center w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto">
-          <i class="icon-search text-base text-[#8E9297]  px-2"></i>
-          <!-- Search Input -->
-          <input
-            type="text"
-            placeholder="Что вы ищите?"
-            class="search-input w-[473px]  h-[58px] focus:outline-none border-gray-300 py-2 rounded-l"
-          />
-          <!-- Search Button -->
-          <button class="bg-black-100 w-[107px] h-[44px] font-semibold text-white px-6 py-2 rounded-[8px] ">
-            Поиск
-          </button>
-        </div>
-          <!-- Dropdown Wrapper (hidden by default) -->
+          <div
+            class="search relative z-10 flex md:flex-row top-[-80px] border group border-gray-100 bg-white items-center w-[580px] h-[60px] px-1 rounded-[8px] mt-20 mx-auto"
+          >
+            <i class="icon-search text-base text-[#8E9297] px-2"></i>
+            <input
+              type="text"
+              placeholder="Что вы ищите?"
+              class="search-input w-[473px] h-[58px] focus:outline-none border-gray-300 py-2 rounded-l"
+            />
+            <button
+              class="bg-black-100 w-[107px] h-[44px] font-semibold text-white px-6 py-2 rounded-[8px]"
+            >
+              Поиск
+            </button>
+          </div>
           <div class="dropdown-wrapper hidden opacity-0 absolute top-[60px]">
-            <div class="fixed inset-0 w-screen h-screen bg-[#17181A66] "></div>
-            <ul class="absolute bg-white border  border-gray-200 rounded-md shadow-lg mt-2  w-[580px]">
+            <div class="fixed inset-0 w-screen h-screen bg-[#17181A66]"></div>
+            <ul
+              class="absolute bg-white border border-gray-200 rounded-md shadow-lg mt-2 w-[580px]"
+            >
               <li class="p-2 text-gray-500 cursor-pointer">История поиска</li>
-              <li class="p-2 flex items-center justify-between h-[52px] w-full hover:bg-[#F0F3F7] cursor-pointer"><div class="flex items-center justify-between"><img src="./images/star.svg" alt="star"><span class="ml-2 font-semibold">Hello</span> </div><i class="icon-chevron text-gray-300 rotate-[-90deg]"></i></li>
-
+              <li
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Hello</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-         
+
       <div
-        class="flex flex-col items-center justify-center w-full  bg-white mt-[29px] pt-[80px]  pb-[50px]"
+        class="flex flex-col items-center justify-center w-full bg-white mt-[29px] pt-[80px] pb-[50px]"
       >
         <h2 class="font-bold text-4xl">Категории</h2>
         <p class="text-[#8E9297] text-x1s mt-[10px]">
           Вы можете найти все категории, которые вам нужны от покупателя
         </p>
-       
-     
-        <section
-      data-section="main"
-      class="categories container mx-auto gap-x-[72px] gap-y-5 grid gap-6 grid-cols-1 pt-20 pl-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
-    >
-      <div
-        class="subcategories-dropdown hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
-      >
-    </div>
-    </section>
+
+        <div
+          data-section="main"
+          class="categories container mx-auto gap-x-[72px] gap-y-5 grid gap-6 grid-cols-1 pt-20 pl-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3"
+        >
+          <div
+            class="subcategories-dropdown hidden col-span-3 rounded-xl border border-grey-4 bg-white p-5 grid-cols-3 gap-x-6 gap-y-3 -translate-x-8 w-[calc(100%+32px)]"
+          ></div>
+        </div>
       </div>
-   
+
       <div
         class="flex py-4 flex-col items-center justify-center w-full pt-50 mt-[10px] px-[30px]"
       >
@@ -141,62 +240,75 @@
 
         <div
           id="product-grid"
-          class="container justify-center items-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 "
+          class="container justify-center items-center mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         ></div>
 
-       
         <button
-          class="bg-gray-100 mt-[40px] font-bold text-black-100 py-2 px-4 rounded-full border border-[rgba(214, 214, 214, 0.50);] hover:bg-gray-200 hover:text-white"
+          class="bg-gray-100 mt-[40px] font-bold text-black-100 py-2 px-4 rounded-full border border-gray-300 hover:bg-gray-200"
         >
           Загрузить больше
         </button>
       </div>
-
-      
-
     </div>
 
-    <footer class="bg-white mt-8 py-8 ">
+    <footer class="bg-white mt-8 py-8">
       <div class="container mx-auto text-center">
-       <a href="#"><img src="/public/logo/Logo_footer.png" alt="Logo" class=" mx-auto mt-[-90px] "></a> 
-        <p class="text-black-500 mb-4 max-w-[670px] mx-auto"> <span>77.uz</span> marketplace - это виртуальная платформа в Узбекистане,
-          которая облегчает покупки и продажи, связывая продавцов с потенциальными клиентами. </p>
-       <div class="flex flex-col md:flex-row justify-center space-x-4 mb-4">
-      <ul class="flex w-full max-w-[800px] justify-between">
-        <li class="flex">
-          <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
-          <a href="#" class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]">Доска
-            объявлений</a>
-        </li>
-        <li class="flex">
-          <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
-          <a href="#"
-            class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]">Условия
-            пользования</a>
-        </li>
-        <li class="flex">
-          <img src="/public/logo/footer-symbol.svg" alt="" class="mr-1">
-          <a href="#" class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]">+998
-            88 500 50 00</a>
-        </li>
-      </ul>
-    </div>
-  
+        <a href="#"
+          ><img
+            src="/logo/Logo_footer.png"
+            alt="Logo"
+            class="mx-auto mt-[-90px]"
+        /></a>
+        <p class="text-black-500 mb-4 max-w-[670px] mx-auto">
+          <span>77.uz</span> marketplace - это виртуальная платформа в
+          Узбекистане, которая облегчает покупки и продажи, связывая продавцов с
+          потенциальными клиентами.
+        </p>
+        <div class="flex flex-col md:flex-row justify-center space-x-4 mb-4">
+          <ul class="flex w-full max-w-[800px] justify-between">
+            <li class="flex">
+              <img src="/logo/footer-symbol.svg" alt="" class="mr-1" />
+              <a
+                href="#"
+                class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]"
+                >Доска объявлений</a
+              >
+            </li>
+            <li class="flex">
+              <img src="/logo/footer-symbol.svg" alt="" class="mr-1" />
+              <a
+                href="#"
+                class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]"
+                >Условия пользования</a
+              >
+            </li>
+            <li class="flex">
+              <img src="/logo/footer-symbol.svg" alt="" class="mr-1" />
+              <a
+                href="tel:+998 88 500 50 00"
+                class="text-[#16191D] text-center font-[Inter] text-base md:text-[20px] font-semibold leading-[130%]"
+                >+998 88 500 50 00</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="border-t  border-gray-200 mb-2 px-12">
-        <div class="flex justify-between items-end h-10 w-[1440px] mx-auto mb-[-32px]">
-          <p class="text-gray-500"> <span class="font-bold">©77.uz </span> 2023. Все права защищены </p>
-          <p class="text-gray-500 mt-4"><a href="#"><img src="/public/logo/uic-logo.svg" alt=""></a></p>
+      <div class="border-t border-gray-100 mb-2 px-12">
+        <div
+          class="flex justify-between items-end h-10 w-[1440px] mx-auto mb-[-32px]"
+        >
+          <p class="text-gray-500">
+            <span class="font-bold">©77.uz </span> 2023. Все права защищены
+          </p>
+          <p class="text-gray-500 mt-4">
+            <a href="#"><img src="/logo/uic-logo.svg" alt="" /></a>
+          </p>
         </div>
       </div>
     </footer>
 
- <script>
+    <script></script>
 
-
-</script>
-  
-
-  <script type="module" src="./src/js/main.js"></script>
+    <script type="module" src="./src/js/main.js"></script>
   </body>
 </html>
