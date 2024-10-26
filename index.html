@@ -103,8 +103,9 @@
           id="loginModal"
           class="fixed inset-0 bg-black-100 bg-opacity-50 -left-10 flex items-center justify-center hidden z-50"
         >
-          <div id="loginForm"
-            class="bg-white rounded-lg p-6 max-w-md w-full shadow-lg relative "
+          <div
+            id="loginForm"
+            class="bg-white rounded-lg p-6 max-w-md w-full shadow-lg relative"
           >
             <button
               id="closeLoginModal"
@@ -163,49 +164,104 @@
                 Хотите стать продавцом?
               </p>
               <button
+              id="submitApplication"
                 class="w-full mt-2 py-3 border text-lg font-semibold border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50"
               >
                 Подать заявку
               </button>
             </form>
-           
           </div>
           <div
-          id="forgotPassModal"
-          class="fixed inset-0 relative z-10 flex items-center justify-center bg-black bg-opacity-50 hidden"
-        >
-          <div
-            class="bg-white rounded-lg shadow-lg p-6 max-w-xs w-full text-center"
+            id="forgotPassModal"
+            class="fixed inset-0 relative z-10 flex items-center justify-center bg-black bg-opacity-50 hidden"
           >
-            <button
-              id="closeModal"
-              class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-            >
-              &times;
-            </button>
-    
             <div
-              class="flex items-center justify-center w-12 h-12 bg-yellow-400 rounded-full mx-auto mb-4"
+              class="bg-white rounded-lg shadow-lg flex flex-col items-center p-6 max-w-xs w-full text-center"
             >
-              <span class="text-white text-2xl">i</span>
-            </div>
-    
-            <p class="text-gray-700 mb-4">
-              Забыли пароль? Для восстановления пароля обратитесь администратору
-            </p>
-    
-            <div
-              class="flex items-center justify-center text-blue-600 font-bold space-x-2"
-            >
-              <span class="text-xl">&#9742;</span>
-              <span>+998 97 450 45 00</span>
+              <button
+                id="closeModal"
+                class="absolute text-3xl font-bold top-4 right-6 text-black-100 hover:text-gray-700"
+              >
+                &times;
+              </button>
+
+              <img src="/images/info.svg" class="mt-6" alt="info" />
+
+              <p class="text-gray-500 mt-6 mb-6">
+                Забыли пароль? Для восстановления пароля обратитесь
+                администратору
+              </p>
+
+              <!-- Contact info -->
+              <div
+                class="flex items-center cursor-pointer justify-center bg-blue-100 text-white font-bold p-4 w-full rounded-lg space-x-2"
+              >
+                <i class="icon-phone text-3xl text-white font-bold"></i
+                ><span class="font-semibold">+998 97 450 45 00</span>
+              </div>
             </div>
           </div>
-        </div>
+          <!-- Modal -->
+    <div
+    id="applicationModal"
+    class="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 hidden"
+>
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full relative">
+        <!-- Close button -->
+        <button id="closeModalButton" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
+        
+        <!-- Modal header -->
+        <h2 class="text-xl font-semibold text-gray-900 mb-1">Подать заявку</h2>
+        <p class="text-gray-500 mb-4">Войти в систему чтобы торговать в системе</p>
+        
+        <!-- Form fields -->
+        <form class="space-y-4">
+            <!-- Ф.И.О. field -->
+            <div>
+                <label class="block text-sm text-gray-700" for="fullName">Ф.И.О.</label>
+                <input type="text" id="fullName" placeholder="Введите вашу Ф.И.О." class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200">
+            </div>
+            
+            <!-- Название продукта field -->
+            <div>
+                <label class="block text-sm text-gray-700" for="productName">Название продукта</label>
+                <input type="text" id="productName" placeholder="Введите название продукта" class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200">
+            </div>
+
+            <!-- Категория dropdown -->
+            <div>
+                <label class="block text-sm text-gray-700" for="category">Категория</label>
+                <select id="category" class="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring focus:ring-blue-200">
+                    <option value="" selected>Выберите категорию</option>
+                    <option value="category1">Категория 1</option>
+                    <option value="category2">Категория 2</option>
+                    <option value="category3">Категория 3</option>
+                </select>
+            </div>
+
+            <!-- Телефон номер field -->
+            <div>
+                <label class="block text-sm text-gray-700" for="phone">Телефон номер</label>
+                <input type="text" id="phone" placeholder="+998 __ __" class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200">
+            </div>
+
+            <!-- Продолжить button -->
+            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700">
+                Продолжить
+            </button>
+        </form>
+
+        <!-- Войти link -->
+        <p class="text-center mt-4 text-sm text-gray-500">Если вы продавец, войдите на платформу</p>
+        <button class="w-full border border-blue-600 text-blue-600 font-semibold py-2 rounded-md mt-2 hover:bg-blue-50">
+            Войти
+        </button>
+    </div>
+</div>
+
         </div>
       </div>
     </header>
-    
 
     <div
       class="flex flex-col relative items-center justify-center w-full px-[30px]"

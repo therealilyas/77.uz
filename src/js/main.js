@@ -246,6 +246,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+      modal.classList.add('hidden');
+  }
+});
+
 const modal = document.getElementById('forgotPassModal');
 const forgotPasswordBtn = document.getElementById('forgotPassword');
 const closeModalBtn = document.getElementById('closeModal');
@@ -266,4 +272,20 @@ window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.classList.add('hidden');
     }
+});
+
+
+const submitApplication = document.getElementById('submitApplication')
+const submitAppModal = document.getElementById('applicationModal')
+
+submitApplication.addEventListener('click',()=>{
+  submitAppModal.classList.remove('hidden');
+  loginForm.classList.add('hidden')
+})
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    submitAppModal.classList.remove('hidden');
+
+  }
 });
