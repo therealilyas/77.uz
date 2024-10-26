@@ -211,20 +211,59 @@ document.addEventListener("DOMContentLoaded", function () {
   const closeModalButton = document.getElementById("closeLoginModal");
   const loginModal = document.getElementById("loginModal");
 
-  // Open Modal
   openModalButton.addEventListener("click", () => {
     loginModal.classList.remove("hidden");
   });
 
-  // Close Modal
   closeModalButton.addEventListener("click", () => {
     loginModal.classList.add("hidden");
   });
-
-  // Close Modal by clicking outside
   window.addEventListener("click", (e) => {
     if (e.target === loginModal) {
       loginModal.classList.add("hidden");
     }
   });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const applicationModal = document.getElementById('applicationModal');
+  const applyButton = document.querySelector('button:contains("Подать заявку")');
+  const closeApplicationModal = document.getElementById('closeApplicationModal');
+
+  applyButton.addEventListener('click', (e) => {
+    e.preventDefault(); 
+    applicationModal.classList.remove('hidden');
+  });
+
+  closeApplicationModal.addEventListener('click', () => {
+    applicationModal.classList.add('hidden');
+  });
+
+  applicationModal.addEventListener('click', (e) => {
+    if (e.target === applicationModal) {
+      applicationModal.classList.add('hidden');
+    }
+  });
+});
+
+const modal = document.getElementById('forgotPassModal');
+const forgotPasswordBtn = document.getElementById('forgotPassword');
+const closeModalBtn = document.getElementById('closeModal');
+const loginForm = document.getElementById('loginForm')
+
+
+
+forgotPasswordBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    loginForm.classList.add('hidden')
+});
+
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.add('hidden');
+    }
 });
