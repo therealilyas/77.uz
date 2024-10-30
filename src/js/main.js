@@ -21,7 +21,7 @@ const getCateogryTemplate = (category, idx) => {
   return `
     <div class="group">
       <div
-        class="category transition-all duration-200 rounded-xl border border-grey-4 group-hover:bg-blue-100 group-hover:text-white group-hover:border-white/20 flex items-center gap-3 shadow-category py-[22px] pr-3 bg-white cursor-pointer"
+        class="category transition-all duration-200 rounded-xl border border-grey-4 group-hover:border-blue-100  group-hover:border-1 flex items-center gap-3 shadow-category py-[22px] pr-3 bg-white cursor-pointer"
         data-index="${idx}"
         onclick="toggleDropdown(${idx})"
       >
@@ -35,7 +35,7 @@ const getCateogryTemplate = (category, idx) => {
           <h3>${category.title}</h3>
           <p>${category.listings} объявлений</p>
         </div>
-        <i class="icon-chevron rotate-[-90deg]"></i>   </div> </div>
+        <i class="icon-chevron rotate-[-90deg] relative  group-hover:text-blue-100 group-hover:text-lg"></i>   </div> </div>
     `;
 };
 
@@ -118,14 +118,14 @@ function createProductCard(product) {
  
 <img src="/products/${product.image}" class="bg-[url('/products/${product.image}')] w-full h-[240px] rounded-t-[12px] object-cover" alt="${product.name}">
 
-      <i class="icon-heart text-4xl		 text-white absolute top-2 left-2 pt-[8px] pl-[8px] w-[120px] "></i>
+      <i class="icon-heart text-4xl font-light	text-white absolute top-2 left-2 pt-[8px] pl-[8px] w-[120px] "></i>
 
 </div>
 
 <div class="p-4">
 
 <div class="mt-3">
-<span class="inline-block bg-gray-100 text-gray-600 group-hover:bg-blue-100 group-hover:text-white text-xs font-medium px-2 py-1 rounded">
+<span class="inline-block bg-gray-100 text-gray-600  text-xs font-medium px-2 py-1 rounded">
     ${product.location}
 </span>
 </div>
@@ -138,7 +138,7 @@ ${product.name}
 
 <p class="text-gray-200 font-medium text-sm mt-1">${product.phone}</p>
 
-<div class="mt-3"><span class="text-2xl font-bold text-gray-900 group-hover:text-blue-600 ">${product.price}</span>
+<div class="mt-3"><span class="text-2xl font-bold text-gray-900 ">${product.price}</span>
 
 <span class="text-blue-600 text-sm font-semibold">UZS</span>
 </div>
@@ -185,25 +185,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-
-
 const searchInputEl = document.querySelector(".search-input");
 const dropdownWrapper = document.querySelector(".dropdown-wrapper");
 
 let isSearchOpened = false;
 
+searchInputEl.addEventListener("click", () => {
+  isSearchOpened = !isSearchOpened;
 
-searchInputEl.addEventListener('click', () => {
-    isSearchOpened = !isSearchOpened;
-
-    if (isSearchOpened) {
-        dropdownWrapper.classList.remove('hidden');
-        dropdownWrapper.classList.add('opacity-100');
-    } else {
-        dropdownWrapper.classList.add('hidden');
-        dropdownWrapper.classList.remove('opacity-100');
-    }
+  if (isSearchOpened) {
+    dropdownWrapper.classList.remove("hidden");
+    dropdownWrapper.classList.add("opacity-100");
+  } else {
+    dropdownWrapper.classList.add("hidden");
+    dropdownWrapper.classList.remove("opacity-100");
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -225,67 +221,121 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  const applicationModal = document.getElementById('applicationModal');
-  const applyButton = document.querySelector('button:contains("Подать заявку")');
-  const closeApplicationModal = document.getElementById('closeApplicationModal');
+document.addEventListener("DOMContentLoaded", () => {
+  const applicationModal = document.getElementById("applicationModal");
+  const applyButton = document.querySelector(
+    'button:contains("Подать заявку")'
+  );
+  const closeApplicationModal = document.getElementById(
+    "closeApplicationModal"
+  );
 
-  applyButton.addEventListener('click', (e) => {
-    e.preventDefault(); 
-    applicationModal.classList.remove('hidden');
+  applyButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    applicationModal.classList.remove("hidden");
   });
 
-  closeApplicationModal.addEventListener('click', () => {
-    applicationModal.classList.add('hidden');
+  closeApplicationModal.addEventListener("click", () => {
+    applicationModal.classList.add("hidden");
   });
 
-  applicationModal.addEventListener('click', (e) => {
+  applicationModal.addEventListener("click", (e) => {
     if (e.target === applicationModal) {
-      applicationModal.classList.add('hidden');
+      applicationModal.classList.add("hidden");
+    }
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === applicationModal) {
+      applicationModal.classList.add("hidden");
     }
   });
 });
 
-window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-      modal.classList.add('hidden');
+window.addEventListener("click", (e) => {
+  if (e.target === applicationModal) {
+    applicationModal.classList.add("hidden");
   }
 });
 
-const modal = document.getElementById('forgotPassModal');
-const forgotPasswordBtn = document.getElementById('forgotPassword');
-const closeModalBtn = document.getElementById('closeModal');
-const loginForm = document.getElementById('loginForm')
+const modalPass = document.getElementById("forgotPassModal");
+const forgotPasswordBtn = document.getElementById("forgotPassword");
+const closeModalBtn = document.getElementById("closeModal");
+const loginForm = document.getElementById("loginForm");
 
-
-
-forgotPasswordBtn.addEventListener('click', () => {
-    modal.classList.remove('hidden');
-    loginForm.classList.add('hidden')
+forgotPasswordBtn.addEventListener("click", () => {
+  modalPass.classList.remove("hidden");
+  loginForm.classList.add("hidden");
 });
 
-closeModalBtn.addEventListener('click', () => {
-    modal.classList.add('hidden');
+closeModalBtn.addEventListener("click", () => {
+  modalPass.classList.add("hidden");
 });
 
-window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.classList.add('hidden');
-    }
-});
-
-
-const submitApplication = document.getElementById('submitApplication')
-const submitAppModal = document.getElementById('applicationModal')
-
-submitApplication.addEventListener('click',()=>{
-  submitAppModal.classList.remove('hidden');
-  loginForm.classList.add('hidden')
-})
-
-window.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    submitAppModal.classList.remove('hidden');
-
+window.addEventListener("click", (e) => {
+  if (e.target === modalPass) {
+    modalPass.classList.add("hidden");
   }
+});
+
+const submitApplication = document.getElementById("submitApplication");
+const submitAppModal = document.getElementById("applicationModal");
+
+submitApplication.addEventListener("click", () => {
+  submitAppModal.classList.remove("hidden");
+  loginForm.classList.add("hidden");
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === submitAppModal) {
+    submitAppModal.classList.remove("hidden");
+  }
+});
+
+// Escape special characters in the search term for RegExp.
+RegExp.escape = function (text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
+window.addEventListener("load", function () {
+  const wrapper = (match) =>
+    `<span style="background-color: yellow;">${match}</span>`;
+  const term = document.querySelector(".search-input");
+  const list = document.getElementById("ul-id");
+  const items = list.querySelectorAll("li:not(:first-child)"); // Ignore header
+  const source = Array.from(items, (li) =>
+    li.querySelector("span").textContent.trim()
+  );
+
+  const cmp = (a, b) => b.length - a.length;
+
+  const delay = (fn, ms) => {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), ms);
+    };
+  };
+  term.addEventListener(
+    "keyup",
+    delay(function () {
+      const query = this.value.trim();
+      if (query) {
+        const words = query.match(/[^ ]+/g).sort(cmp).map(RegExp.escape);
+        const re = new RegExp(words.join("|"), "gi");
+
+        items.forEach((item, index) => {
+          const originalText = source[index];
+          const highlighted = originalText.replace(re, wrapper);
+          item.querySelector("span").innerHTML = highlighted;
+          item.style.display = "flex";
+        });
+      } else {
+        items.forEach((item, index) => {
+          item.querySelector("span").textContent = source[index];
+          item.style.display = "none";
+        });
+      }
+    }, 300)
+  );
 });

@@ -164,7 +164,7 @@
                 Хотите стать продавцом?
               </p>
               <button
-              id="submitApplication"
+                id="submitApplication"
                 class="w-full mt-2 py-3 border text-lg font-semibold border-blue-500 text-blue-500 rounded-lg hover:bg-blue-50"
               >
                 Подать заявку
@@ -176,7 +176,7 @@
             class="fixed inset-0 relative z-10 flex items-center justify-center bg-black bg-opacity-50 hidden"
           >
             <div
-              class="bg-white rounded-lg shadow-lg flex flex-col items-center p-6 max-w-xs w-full text-center"
+              class="bg-white w-[378px] rounded-lg shadow-lg flex flex-col items-center py-10 px-6 text-center"
             >
               <button
                 id="closeModal"
@@ -196,69 +196,112 @@
               <div
                 class="flex items-center cursor-pointer justify-center bg-blue-100 text-white font-bold p-4 w-full rounded-lg space-x-2"
               >
-                <i class="icon-phone text-3xl text-white font-bold"></i
-                ><span class="font-semibold">+998 97 450 45 00</span>
+                <i class="icon-phone text-2xl text-white font-bold"></i
+                ><span class="font-normal text-lg">+998 97 450 45 00</span>
               </div>
             </div>
           </div>
           <!-- Modal -->
-    <div
-    id="applicationModal"
-    class="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 hidden"
->
-    <div class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full relative">
-        <!-- Close button -->
-        <button id="closeModalButton" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl">&times;</button>
-        
-        <!-- Modal header -->
-        <h2 class="text-xl font-semibold text-gray-900 mb-1">Подать заявку</h2>
-        <p class="text-gray-500 mb-4">Войти в систему чтобы торговать в системе</p>
-        
-        <!-- Form fields -->
-        <form class="space-y-4">
-            <!-- Ф.И.О. field -->
-            <div>
-                <label class="block text-sm text-gray-700" for="fullName">Ф.И.О.</label>
-                <input type="text" id="fullName" placeholder="Введите вашу Ф.И.О." class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200">
-            </div>
-            
-            <!-- Название продукта field -->
-            <div>
-                <label class="block text-sm text-gray-700" for="productName">Название продукта</label>
-                <input type="text" id="productName" placeholder="Введите название продукта" class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200">
-            </div>
+          <div
+            id="applicationModal"
+            class="fixed inset-0 z-10 flex items-center justify-center bg-black bg-opacity-50 hidden"
+          >
+            <div
+              class="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full relative"
+            >
+              <!-- Close button -->
+              <button
+                id="closeModalButton"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-xl"
+              >
+                &times;
+              </button>
 
-            <!-- Категория dropdown -->
-            <div>
-                <label class="block text-sm text-gray-700" for="category">Категория</label>
-                <select id="category" class="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring focus:ring-blue-200">
+              <!-- Modal header -->
+              <h2 class="text-xl font-semibold text-gray-900 mb-1">
+                Подать заявку
+              </h2>
+              <p class="text-gray-500 mb-4">
+                Войти в систему чтобы торговать в системе
+              </p>
+
+              <!-- Form fields -->
+              <form class="space-y-4">
+                <!-- Ф.И.О. field -->
+                <div>
+                  <label class="block text-sm text-gray-700" for="fullName"
+                    >Ф.И.О.</label
+                  >
+                  <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Введите вашу Ф.И.О."
+                    class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200"
+                  />
+                </div>
+
+                <!-- Название продукта field -->
+                <div>
+                  <label class="block text-sm text-gray-700" for="productName"
+                    >Название продукта</label
+                  >
+                  <input
+                    type="text"
+                    id="productName"
+                    placeholder="Введите название продукта"
+                    class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200"
+                  />
+                </div>
+
+                <!-- Категория dropdown -->
+                <div>
+                  <label class="block text-sm text-gray-700" for="category"
+                    >Категория</label
+                  >
+                  <select
+                    id="category"
+                    class="w-full px-3 py-2 border rounded-md text-gray-700 focus:outline-none focus:ring focus:ring-blue-200"
+                  >
                     <option value="" selected>Выберите категорию</option>
                     <option value="category1">Категория 1</option>
                     <option value="category2">Категория 2</option>
                     <option value="category3">Категория 3</option>
-                </select>
+                  </select>
+                </div>
+
+                <!-- Телефон номер field -->
+                <div>
+                  <label class="block text-sm text-gray-700" for="phone"
+                    >Телефон номер</label
+                  >
+                  <input
+                    type="text"
+                    id="phone"
+                    placeholder="+998 __ __"
+                    class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200"
+                  />
+                </div>
+
+                <!-- Продолжить button -->
+                <button
+                  type="submit"
+                  class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700"
+                >
+                  Продолжить
+                </button>
+              </form>
+
+              <!-- Войти link -->
+              <p class="text-center mt-4 text-sm text-gray-500">
+                Если вы продавец, войдите на платформу
+              </p>
+              <button
+                class="w-full border border-blue-600 text-blue-600 font-semibold py-2 rounded-md mt-2 hover:bg-blue-50"
+              >
+                Войти
+              </button>
             </div>
-
-            <!-- Телефон номер field -->
-            <div>
-                <label class="block text-sm text-gray-700" for="phone">Телефон номер</label>
-                <input type="text" id="phone" placeholder="+998 __ __" class="w-full px-3 py-2 border rounded-md text-gray-700 placeholder-gray-400 focus:outline-none focus:ring focus:ring-blue-200">
-            </div>
-
-            <!-- Продолжить button -->
-            <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700">
-                Продолжить
-            </button>
-        </form>
-
-        <!-- Войти link -->
-        <p class="text-center mt-4 text-sm text-gray-500">Если вы продавец, войдите на платформу</p>
-        <button class="w-full border border-blue-600 text-blue-600 font-semibold py-2 rounded-md mt-2 hover:bg-blue-50">
-            Войти
-        </button>
-    </div>
-</div>
-
+          </div>
         </div>
       </div>
     </header>
@@ -290,16 +333,107 @@
           <div class="dropdown-wrapper hidden opacity-0 absolute top-[60px]">
             <div class="fixed inset-0 w-screen h-screen bg-[#17181A66]"></div>
             <ul
+              id="ul-id"
               class="absolute bg-white border border-gray-200 rounded-md shadow-lg mt-2 w-[580px]"
             >
               <li class="p-2 text-gray-500 cursor-pointer">История поиска</li>
+
               <li
+                id="li-id-1"
                 class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
               >
                 <div class="flex items-center justify-between">
                   <img src="./images/star.svg" alt="star" /><span
                     class="ml-2 font-semibold"
-                    >Hello</span
+                    >Холодильники</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
+
+              <li
+                id="li-id-1"
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Телевизоры</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
+              <li
+                id="li-id-1"
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Наушники и аксессуары</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
+              <li
+                id="li-id-1"
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Кухонная мебель</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
+
+              <li
+                id="li-id-1"
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Телефоны</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
+              <li
+                id="li-id-1"
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Бытовая техника</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
+
+              <li
+                id="li-id-1"
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Микроволновки</span
+                  >
+                </div>
+                <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
+              </li>
+
+              <li
+                id="li-id-1"
+                class="p-2 flex items-center justify-between h-[52px] w-full rounded-md hover:bg-[#F0F3F7] cursor-pointer"
+              >
+                <div class="flex items-center justify-between">
+                  <img src="./images/star.svg" alt="star" /><span
+                    class="ml-2 font-semibold"
+                    >Аккумуляторы</span
                   >
                 </div>
                 <i class="icon-chevron text-gray-300 rotate-[-90deg]"></i>
