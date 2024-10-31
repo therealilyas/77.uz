@@ -191,24 +191,26 @@ const dropdownWrapperModal = document.querySelector(".dropdown-wrapper-modal");
 
 let isSearchOpened = false;
 
-searchInputEl.addEventListener("click", () => {
-  isSearchOpened = !isSearchOpened;
-
-  if (isSearchOpened) {
-    dropdownWrapper.classList.remove("hidden");
-    dropdownWrapper.classList.add("opacity-100");
-  } else {
-    dropdownWrapper.classList.add("hidden");
-    dropdownWrapper.classList.remove("opacity-100");
-  }
+searchInputEl.addEventListener("click", (event) => {
+  event.stopPropagation();
+  isSearchOpened = true;
+  dropdownWrapper.classList.remove("hidden", "opacity-0");
+  dropdownWrapper.classList.add("opacity-100");
+  dropdownWrapperModal.classList.remove("hidden");
 });
 
-window.addEventListener("click", (e) => {
-  if (e.target === dropdownWrapperModal) {
-    dropdownWrapperModal.classList.add("hidden");
-    dropdownWrapper.classList.add("hidden");
-  }
-});
+
+dropdownWrapperModal.addEventListener("click", closeDropdown);
+
+function closeDropdown() {
+  isSearchOpened = false;
+  dropdownWrapper.classList.add("hidden", "opacity-0");
+  dropdownWrapper.classList.remove("opacity-100");
+  dropdownWrapperModal.classList.add("hidden");
+}
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const openModalButton = document.getElementById("openLoginModal");
@@ -260,11 +262,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-window.addEventListener("click", (e) => {
-  if (e.target === applicationModal) {
-    applicationModal.classList.add("hidden");
-  }
-});
 
 const modalPass = document.getElementById("forgotPassModal");
 const forgotPasswordBtn = document.getElementById("forgotPassword");
@@ -280,12 +277,6 @@ closeModalBtn.addEventListener("click", () => {
   modalPass.classList.add("hidden");
 });
 
-window.addEventListener("click", (e) => {
-  if (e.target === modalPass) {
-    modalPass.classList.add("hidden");
-  }
-});
-
 const submitApplication = document.getElementById("submitApplication");
 const submitAppModal = document.getElementById("applicationModal");
 
@@ -294,13 +285,23 @@ submitApplication.addEventListener("click", () => {
   loginForm.classList.add("hidden");
 });
 
+
 window.addEventListener("click", (e) => {
+    if (!searchInputEl.contains(event.target) && !dropdownWrapper.contains(event.target)) {
+      closeDropdown();
+    }
+  
+  if (e.target === applicationModal) {
+    applicationModal.classList.add("hidden");
+  }
+  if (e.target === modalPass) {
+    modalPass.classList.add("hidden");
+  }
   if (e.target === submitAppModal) {
     submitAppModal.classList.remove("hidden");
   }
 });
 
-// Escape special characters in the search term for RegExp.
 RegExp.escape = function (text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
@@ -310,7 +311,7 @@ window.addEventListener("load", function () {
     `<span style="background-color: yellow;">${match}</span>`;
   const term = document.querySelector(".search-input");
   const list = document.getElementById("ul-id");
-  const items = list.querySelectorAll("li:not(:first-child)"); // Ignore header
+  const items = list.querySelectorAll("li:not(:first-child)");
   const source = Array.from(items, (li) =>
     li.querySelector("span").textContent.trim()
   );
