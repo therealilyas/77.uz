@@ -187,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const searchInputEl = document.querySelector(".search-input");
 const dropdownWrapper = document.querySelector(".dropdown-wrapper");
+const dropdownWrapperModal = document.querySelector(".dropdown-wrapper-modal");
 
 let isSearchOpened = false;
 
@@ -199,6 +200,13 @@ searchInputEl.addEventListener("click", () => {
   } else {
     dropdownWrapper.classList.add("hidden");
     dropdownWrapper.classList.remove("opacity-100");
+  }
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === dropdownWrapperModal) {
+    dropdownWrapperModal.classList.add("hidden");
+    dropdownWrapper.classList.add("hidden");
   }
 });
 
